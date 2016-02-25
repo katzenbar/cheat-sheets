@@ -1,0 +1,41 @@
+body, pre, .table th, .table td {
+  font-size: 12px;
+}
+
+.section-heading {
+  display: inline-block;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+dl {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table tr.table__table-row--no-top-border td {
+  border-top: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* Helper Classes                                                                                 */
+/* ---------------------------------------------------------------------------------------------- */
+
+.nudge--bottom {
+  margin-bottom: 5px;
+}
+
+.push--right {
+  margin-right: 10px;
+}
+
+.push--bottom {
+  margin-bottom: 10px;
+}

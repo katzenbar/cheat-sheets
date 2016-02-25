@@ -1,0 +1,281 @@
+<html>
+<head>
+  <title>Ruby on Rails 4 Cheat Sheet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Ruby on Rails 4 Cheat Sheet</h3>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Rails MVC Pattern
+            </h3>
+          </div>
+          <div class="panel-body">
+            <div class="push--bottom">
+              <strong>Models</strong> represent the objects in your application. These are tied to
+              the tables in your database.
+              Model names are singular &mdash; <samp>Post</samp>
+            </div>
+
+            <div class="push--bottom">
+              <strong>Controllers</strong> contain functions that are mapped to routes, and handle
+              the endpoints for our application.
+              Controller names are plural &mdash; <samp>PostsController</samp>
+            </div>
+
+            <div>
+              <strong>Views</strong> define the HTML view for each endpoint in the application.
+              View paths matches controller and function &mdash; <samp>views/posts/index.html.erb</samp>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              App Structure
+            </h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li>
+                <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span><em>APP_NAME - root folder for your app</em>
+
+                <ul>
+                  <li>
+                    <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>app <em>- contains code for your app</em>
+
+                    <ul>
+                      <li>
+                        <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>controllers
+                        <ul>
+                          <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span><strong>posts_controller.rb</strong></li>
+                        </ul>
+                      </li>
+                      <li><span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>helpers <em>- custom view helpers</em></li>
+                      <li>
+                        <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>models
+                        <ul>
+                          <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span><strong>post.rb</strong></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>views
+                        <ul>
+                          <li>
+                            <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>layouts
+                            <ul>
+                              <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span><strong>application.html.erb</strong> <em>- root template for your app</em></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>posts
+                            <ul>
+                              <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>index.html.erb <em>- names match controller actions</em></li>
+                              <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>show.html.erb</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>bin <em>- scripts to run gems</em>
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>config <em>- app configurations</em>
+
+                    <ul>
+                      <li>
+                        <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>environments <em>- rails configs for each env</em>
+                        <ul>
+                          <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>develop.rb</li>
+                          <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>production.rb</li>
+                          <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>test.rb</li>
+                        </ul>
+                      </li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>application.rb</li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>database.yml <em>- configures db connection</em></li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>environmment.rb</li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span><strong>routes.rb</strong> <em>- defines routes for app</em></li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>db
+                    <ul>
+                      <li><span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>migrate <em>- database migrations</em></li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>schema.rb <em>- database structure</em></li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>seeds.rb <em>- default data to load in db</em></li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>lib
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>log
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>public <em>- static files served at root url</em>
+                  </li>
+
+                  <li>
+                    <span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>spec <em>- RSpec unit tests</em>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Common Patterns for Controllers
+            </h3>
+          </div>
+          <div class="panel-body">
+            <small class="section-heading text-uppercase text-muted">Queries</small>
+            <table class="table table-condensed nudge--bottom">
+              <tr>
+                <td><strong>Get all records</strong></td>
+                <td><samp>Post.all</samp></td>
+              </tr>
+              <tr>
+                <td><strong>Query for record by id</strong></td>
+                <td><samp>Post.find(post_id)</samp></td>
+              </tr>
+              <tr>
+                <td><strong>Query for many records</strong></td>
+                <td><samp>Post.where(state: :active)</samp></td>
+              </tr>
+            </table>
+
+            <small class="section-heading text-uppercase text-muted">Strong Parameters</small>
+            <pre>params.require(:post).permit(:title)</pre>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Routes
+            </h3>
+          </div>
+          <div class="panel-body">
+            <div class="push--bottom">
+              <code>resources :posts</code> generates the following routes
+            </div>
+
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Route</th>
+                  <th>HTTP</th>
+                  <th>Used For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>index</td>
+                  <td>/posts</td>
+                  <td><span class="label label-default">GET</span></td>
+                  <td>List</td>
+                </tr>
+                <tr>
+                  <td>show</td>
+                  <td>/post/:id</td>
+                  <td><span class="label label-default">GET</span></td>
+                  <td>Show one</td>
+                </tr>
+                <tr>
+                  <td>new</td>
+                  <td>/post/new</td>
+                  <td><span class="label label-default">GET</span></td>
+                  <td>Show form for new</td>
+                </tr>
+                <tr>
+                  <td>create</td>
+                  <td>/posts</td>
+                  <td><span class="label label-default">POST</span></td>
+                  <td>Create new</td>
+                </tr>
+                <tr>
+                  <td>edit</td>
+                  <td>/posts/:id/edit</td>
+                  <td><span class="label label-default">GET</span></td>
+                  <td>Show form for edit</td>
+                </tr>
+                <tr>
+                  <td>update</td>
+                  <td>/posts/:id</td>
+                  <td><span class="label label-default">PUT</span></td>
+                  <td>Update model</td>
+                </tr>
+                <tr>
+                  <td>destroy</td>
+                  <td>/posts/:id</td>
+                  <td><span class="label label-default">DELETE</span></td>
+                  <td>Deletes model</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Command Line
+            </h3>
+          </div>
+          <div class="panel-body">
+            <table class="table table-condensed">
+              <tr class="table__table-row--no-top-border">
+                <td><strong>Start server</strong></td>
+                <td><samp>rails server</samp></td>
+              </tr>
+              <tr>
+                <td><strong>Generate model</strong></td>
+                <td><samp>rails generate model Post title:string</samp></td>
+              </tr>
+              <tr>
+                <td><strong>List commands</strong></td>
+                <td><samp>rake -T</samp></td>
+              </tr>
+              <tr>
+                <td><strong>List routes</strong></td>
+                <td><samp>rake routes</samp></td>
+              </tr>
+              <tr>
+                <td><strong>Run migrations</strong></td>
+                <td><samp>rake db:migrate</samp></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
