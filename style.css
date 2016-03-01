@@ -2,12 +2,6 @@ body, pre, .table th, .table td {
   font-size: 12px;
 }
 
-.section-heading {
-  display: inline-block;
-  font-weight: 700;
-  margin: 5px 0;
-}
-
 dl {
   margin-bottom: 0;
 }
@@ -22,6 +16,43 @@ ul {
 
 .table tr.table__table-row--no-top-border td {
   border-top: 0;
+}
+
+.panel-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.panel-heading {
+  padding: 5px 10px;
+}
+
+.panel-body {
+  padding: 10px;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* My Classes                                                                                     */
+/* ---------------------------------------------------------------------------------------------- */
+
+.page-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.page-subheading {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 14px 0 10px;
+  text-align: right;
+}
+
+.section-heading {
+  display: inline-block;
+  font-weight: 700;
+  margin: 5px 0;
 }
 
 /* ---------------------------------------------------------------------------------------------- */

@@ -7,8 +7,12 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <h3>Ruby on Rails 4 Cheat Sheet</h3>
+      <div class="col-xs-6">
+        <div class="page-heading">Ruby on Rails 4 Cheat Sheet</div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="page-subheading text-muted">Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by @ktornwall</div>
       </div>
     </div>
 
@@ -118,7 +122,7 @@
                     <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>db
                     <ul>
                       <li><span class="glyphicon glyphicon-folder-close push--right" aria-hidden="true"></span>migrate <em>- database migrations</em></li>
-                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>schema.rb <em>- database structure</em></li>
+                      <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>schema.rb <em>- database structure, <strong>look for basic model properties here</strong></em></li>
                       <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>seeds.rb <em>- default data to load in db</em></li>
                     </ul>
                   </li>
@@ -170,7 +174,7 @@
             </table>
 
             <small class="section-heading text-uppercase text-muted">Strong Parameters</small>
-            <pre>params.require(:post).permit(:title)</pre>
+            <samp>params.require(:post).permit(:title)</samp>
           </div>
         </div>
 
@@ -182,7 +186,8 @@
           </div>
           <div class="panel-body">
             <div class="push--bottom">
-              <code>resources :posts</code> generates the following routes
+              Adding <samp>resources :posts</samp> to the router in <samp>config/routes.rb</samp>
+              generates the following routes
             </div>
 
             <table class="table table-condensed">
@@ -251,6 +256,14 @@
           <div class="panel-body">
             <table class="table table-condensed">
               <tr class="table__table-row--no-top-border">
+                <td><strong>Install dependencies</strong></td>
+                <td><samp>bundle install</samp></td>
+              </tr>
+              <tr>
+                <td><strong>List Rails commands</strong></td>
+                <td><samp>rails help</samp></td>
+              </tr>
+              <tr>
                 <td><strong>Start server</strong></td>
                 <td><samp>rails server</samp></td>
               </tr>
@@ -259,7 +272,7 @@
                 <td><samp>rails generate model Post title:string</samp></td>
               </tr>
               <tr>
-                <td><strong>List commands</strong></td>
+                <td><strong>List Rake commands</strong></td>
                 <td><samp>rake -T</samp></td>
               </tr>
               <tr>
