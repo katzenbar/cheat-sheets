@@ -29,18 +29,23 @@
             <div class="push--bottom">
               <strong>Models</strong> represent the objects in your application. These are tied to
               the tables in your database.
-              Model names are singular &mdash; <samp>Post</samp>
+              Model names are singular &mdash; <samp>Post</samp> &mdash; <samp>app/models/post.rb</samp>
             </div>
 
             <div class="push--bottom">
               <strong>Controllers</strong> contain functions that are mapped to routes, and handle
               the endpoints for our application.
-              Controller names are plural &mdash; <samp>PostsController</samp>
+              Controller names are plural &mdash; <samp>PostsController</samp> &mdash; <samp>app/controllers/posts_controller.rb</samp>
+            </div>
+
+            <div class="push--bottom">
+              <strong>Views</strong> define the HTML view for each endpoint in the application.
+              View paths matches controller and function &mdash; <samp>app/views/posts/index.html.erb</samp>
             </div>
 
             <div>
-              <strong>Views</strong> define the HTML view for each endpoint in the application.
-              View paths matches controller and function &mdash; <samp>views/posts/index.html.erb</samp>
+              <strong>Routes</strong> define the endpoints that our application serves.
+              &mdash; <samp>config/routes.rb</samp>
             </div>
           </div>
         </div>
@@ -86,7 +91,7 @@
                           <li>
                             <span class="glyphicon glyphicon-folder-open push--right" aria-hidden="true"></span>posts
                             <ul>
-                              <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>index.html.erb <em>- names match controller actions</em></li>
+                              <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span><strong>index.html.erb</strong> <em>- names match controller actions</em></li>
                               <li><span class="glyphicon glyphicon-file push--right" aria-hidden="true"></span>show.html.erb</li>
                             </ul>
                           </li>
@@ -188,8 +193,11 @@
           </div>
           <div class="panel-body">
             <div class="push--bottom">
-              Adding <samp>resources :posts</samp> to the router in <samp>config/routes.rb</samp>
-              generates the following routes
+              In <samp>config/routes.rb</samp>, this generates the endpoints:
+              <pre>
+Rails.application.routes.draw do
+  resources :posts
+end</pre>
             </div>
 
             <table class="table table-condensed">

@@ -2,12 +2,17 @@ body, pre, .table th, .table td {
   font-size: 12px;
 }
 
+pre {
+  padding: 5px 10px;
+}
+
 dl {
   margin-bottom: 0;
 }
 
 ul {
   padding-left: 20px;
+  margin-bottom: 0;
 }
 
 .table {
@@ -16,6 +21,10 @@ ul {
 
 .table tr.table__table-row--no-top-border td {
   border-top: 0;
+}
+
+.panel {
+  margin-bottom: 10px;
 }
 
 .panel-title {
